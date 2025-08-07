@@ -2,7 +2,7 @@ import emailjs from '@emailjs/browser';
 
 const SERVICE_ID = 'service_7t2iv9w';
 const TEMPLATE_ID = 'template_070sjjn';
-const PUBLIC_KEY = 'hmBnhMWXyJnHe1mio';
+const PUBLIC_KEY = 'Ar15Ul4LHp78NCYim';
 
 export interface LeadFormData {
   name: string;
