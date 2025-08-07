@@ -3,6 +3,8 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { sendLeadEmail, type LeadFormData } from "@/lib/emailjs";
 
 export const FinalCTA = () => {
   const [formData, setFormData] = useState({
@@ -13,11 +15,65 @@ export const FinalCTA = () => {
     plugType: "",
     location: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Integration with Google Sheets
-    console.log("Final CTA form submitted:", formData);
+    
+    if (!formData.name || !formData.email || !formData.phone || !formData.vehicleType || !formData.plugType || !formData.location) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all fields to download the guide.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    try {
+      const emailSent = await sendLeadEmail(formData as LeadFormData);
+      
+      if (emailSent) {
+        toast({
+          title: "Success!",
+          description: "Your guide is downloading now. Check your email for additional resources.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          vehicleType: "",
+          plugType: "",
+          location: ""
+        });
+        
+        // Trigger download
+        const link = document.createElement('a');
+        link.href = "https://drive.google.com/uc?export=download&id=1r1VAzbanwY-MS3Y6iAdj8_w9X8keHxeh";
+        link.download = "CNG_Conversion_Guide.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        toast({
+          title: "Error",
+          description: "Failed to process your request. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -175,10 +231,14 @@ export const FinalCTA = () => {
                     </Select>
                   </div>
                   
-                <Button type="submit" variant="cta" size="xl" className="w-full" asChild>
-                  <a href="https://drive.google.com/uc?export=download&id=1r1VAzbanwY-MS3Y6iAdj8_w9X8keHxeh" target="_blank" rel="noopener noreferrer">
-                    Get My Free CNG Guide & Quote
-                  </a>
+                <Button 
+                  type="submit" 
+                  variant="cta" 
+                  size="xl" 
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Processing..." : "Get My Free CNG Guide & Quote"}
                 </Button>
                 </form>
                 
