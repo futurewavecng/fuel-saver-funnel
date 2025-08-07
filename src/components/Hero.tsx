@@ -9,6 +9,7 @@ import heroHappyImage from "@/assets/hero-cng-happy.jpg";
 export const Hero = () => {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     phone: "",
     vehicleType: "",
     plugType: "",
@@ -59,10 +60,13 @@ export const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button variant="cta" size="xl" className="flex-1 sm:flex-none" asChild>
-                <a href="https://drive.google.com/uc?export=download&id=1r1VAzbanwY-MS3Y6iAdj8_w9X8keHxeh" target="_blank" rel="noopener noreferrer">
-                  Download Free CNG Guide
-                </a>
+              <Button 
+                variant="cta" 
+                size="xl" 
+                className="flex-1 sm:flex-none"
+                onClick={() => document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                Download Free CNG Guide
               </Button>
               <Button variant="outline" size="xl" className="flex-1 sm:flex-none text-white border-white hover:bg-white hover:text-primary">
                 Watch Success Stories
@@ -71,7 +75,7 @@ export const Hero = () => {
           </div>
           
           {/* Right Column - Lead Form */}
-          <div className="lg:justify-self-end w-full max-w-md">
+          <div id="hero-form" className="lg:justify-self-end w-full max-w-md">
             <Card className="shadow-strong border-0">
               <CardContent className="p-6 space-y-4">
                 <div className="text-center mb-6">
@@ -84,6 +88,14 @@ export const Hero = () => {
                     placeholder="Your full name"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    required
+                  />
+                  
+                  <Input
+                    placeholder="Your email address"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
                     required
                   />
                   
@@ -137,8 +149,10 @@ export const Hero = () => {
                     </SelectContent>
                   </Select>
                   
-                  <Button type="submit" variant="cta" size="lg" className="w-full">
-                    Download Free Guide Now
+                  <Button type="submit" variant="cta" size="lg" className="w-full" asChild>
+                    <a href="https://drive.google.com/uc?export=download&id=1r1VAzbanwY-MS3Y6iAdj8_w9X8keHxeh" target="_blank" rel="noopener noreferrer">
+                      Download Free Guide Now
+                    </a>
                   </Button>
                 </form>
                 

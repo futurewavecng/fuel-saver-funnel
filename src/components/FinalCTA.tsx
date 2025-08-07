@@ -7,6 +7,7 @@ import { useState } from "react";
 export const FinalCTA = () => {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     phone: "",
     vehicleType: "",
     plugType: "",
@@ -55,10 +56,13 @@ export const FinalCTA = () => {
               </div>
             </div>
 
-            <Button variant="cta" size="xl" className="mb-4" asChild>
-              <a href="https://drive.google.com/uc?export=download&id=1r1VAzbanwY-MS3Y6iAdj8_w9X8keHxeh" target="_blank" rel="noopener noreferrer">
-                Download Free CNG Guide Now
-              </a>
+            <Button 
+              variant="cta" 
+              size="xl" 
+              className="mb-4"
+              onClick={() => document.getElementById('final-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Download Free CNG Guide Now
             </Button>
             <p className="text-white/70 text-sm">
               Join 1,000+ Nigerians who already downloaded this guide
@@ -75,7 +79,11 @@ export const FinalCTA = () => {
               <div className="font-bold text-foreground text-sm">Start Saving Today</div>
               <div className="text-xs text-muted-foreground">Get your free CNG guide</div>
             </div>
-            <Button variant="cta" size="sm">
+            <Button 
+              variant="cta" 
+              size="sm"
+              onClick={() => document.getElementById('final-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               Download Now
             </Button>
           </div>
@@ -83,7 +91,7 @@ export const FinalCTA = () => {
       </div>
 
       {/* Final Form Section for Desktop */}
-      <section className="py-16 bg-muted hidden lg:block">
+      <section id="final-form" className="py-16 bg-muted hidden lg:block">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <Card className="shadow-strong border-0">
@@ -107,13 +115,21 @@ export const FinalCTA = () => {
                     />
                     
                     <Input
-                      placeholder="Your phone number"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      placeholder="Your email address"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
                       required
                     />
                   </div>
+                  
+                  <Input
+                    placeholder="Your phone number"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    required
+                  />
                   
                   <div className="grid md:grid-cols-3 gap-4">
                     <Select value={formData.vehicleType} onValueChange={(value) => setFormData({...formData, vehicleType: value})}>

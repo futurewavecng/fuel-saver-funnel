@@ -62,10 +62,13 @@ export const GuideSection = () => {
               </div>
 
               <div className="space-y-4">
-                <Button variant="cta" size="xl" className="w-full" asChild>
-                  <a href="https://drive.google.com/uc?export=download&id=1r1VAzbanwY-MS3Y6iAdj8_w9X8keHxeh" target="_blank" rel="noopener noreferrer">
-                    Download The Free Guide Now
-                  </a>
+                <Button 
+                  variant="cta" 
+                  size="xl" 
+                  className="w-full"
+                  onClick={() => document.getElementById('hero-form')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Download The Free Guide Now
                 </Button>
                 <p className="text-center text-white/70 text-sm">
                   Join 1,000+ Nigerians who downloaded this guide
