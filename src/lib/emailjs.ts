@@ -16,16 +16,24 @@ export interface LeadFormData {
 export const sendLeadEmail = async (formData: LeadFormData): Promise<boolean> => {
   try {
     const templateParams = {
-      to_name: 'Futurewave CNG Team',
-      from_name: formData.name,
-      from_email: formData.email,
+      name: formData.name,
+      email: formData.email,
       phone: formData.phone,
       vehicle_type: formData.vehicleType,
       engine_type: formData.plugType,
       location: formData.location,
-      submission_date: new Date().toLocaleString(),
+      message: `New CNG Guide Download Request
+      
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Vehicle Type: ${formData.vehicleType}
+Engine Type: ${formData.plugType}
+Location: ${formData.location}
+Submitted: ${new Date().toLocaleString()}`,
     };
 
+    console.log('Sending email with data:', templateParams);
     await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
     return true;
   } catch (error) {
