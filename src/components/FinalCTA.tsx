@@ -55,8 +55,10 @@ export const FinalCTA = () => {
               </div>
             </div>
 
-            <Button variant="cta" size="xl" className="mb-4">
-              Download Free CNG Guide Now
+            <Button variant="cta" size="xl" className="mb-4" asChild>
+              <a href="https://drive.google.com/uc?export=download&id=1r1VAzbanwY-MS3Y6iAdj8_w9X8keHxeh" target="_blank" rel="noopener noreferrer">
+                Download Free CNG Guide Now
+              </a>
             </Button>
             <p className="text-white/70 text-sm">
               Join 1,000+ Nigerians who already downloaded this guide
@@ -157,9 +159,11 @@ export const FinalCTA = () => {
                     </Select>
                   </div>
                   
-                  <Button type="submit" variant="cta" size="xl" className="w-full">
+                <Button type="submit" variant="cta" size="xl" className="w-full" asChild>
+                  <a href="https://drive.google.com/uc?export=download&id=1r1VAzbanwY-MS3Y6iAdj8_w9X8keHxeh" target="_blank" rel="noopener noreferrer">
                     Get My Free CNG Guide & Quote
-                  </Button>
+                  </a>
+                </Button>
                 </form>
                 
                 <p className="text-xs text-muted-foreground text-center mt-4">

@@ -59,8 +59,10 @@ export const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button variant="cta" size="xl" className="flex-1 sm:flex-none">
-                Download Free CNG Guide
+              <Button variant="cta" size="xl" className="flex-1 sm:flex-none" asChild>
+                <a href="https://drive.google.com/uc?export=download&id=1r1VAzbanwY-MS3Y6iAdj8_w9X8keHxeh" target="_blank" rel="noopener noreferrer">
+                  Download Free CNG Guide
+                </a>
               </Button>
               <Button variant="outline" size="xl" className="flex-1 sm:flex-none text-white border-white hover:bg-white hover:text-primary">
                 Watch Success Stories
