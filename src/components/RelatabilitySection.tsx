@@ -1,3 +1,5 @@
+import { YouTubeVideo } from './YouTubeVideo';
+
 export const RelatabilitySection = () => {
   return (
     <section className="py-16 bg-muted">
@@ -12,15 +14,10 @@ export const RelatabilitySection = () => {
           </p>
           
           <div className="bg-card rounded-lg shadow-soft p-8 mb-8">
-            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-4xl mb-4">🎥</div>
-                <p className="text-muted-foreground">Video: Watch this man's frustration</p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  "I bought ₦28,000 petrol, and my fuel gauge barely moved!"
-                </p>
-              </div>
-            </div>
+            <YouTubeVideo 
+              videoId="PDEI9pxbT3Q" 
+              title="Customer Fuel Frustration Story"
+            />
           </div>
           
           <div className="grid md:grid-cols-2 gap-8 text-left">

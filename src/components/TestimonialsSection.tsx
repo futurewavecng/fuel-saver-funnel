@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { YouTubeVideo } from './YouTubeVideo';
 
 export const TestimonialsSection = () => {
   const testimonials = [
@@ -65,13 +66,10 @@ export const TestimonialsSection = () => {
           </p>
           
           <div className="mt-8 bg-card rounded-lg shadow-soft p-8 max-w-2xl mx-auto">
-            <div className="aspect-video bg-gradient-hero rounded-lg flex items-center justify-center">
-              <div className="text-center text-white">
-                <div className="text-6xl mb-4">▶️</div>
-                <h3 className="text-xl font-bold mb-2">Watch Real Customer Stories</h3>
-                <p className="text-white/80">See how CNG changed their lives</p>
-              </div>
-            </div>
+            <YouTubeVideo 
+              videoId="PDEI9pxbT3Q" 
+              title="Real Customer Stories - CNG Conversion Success"
+            />
           </div>
         </div>
 
