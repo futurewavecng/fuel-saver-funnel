@@ -1,4 +1,4 @@
-import { YouTubeVideo } from './YouTubeVideo';
+import { GoogleDriveVideo } from './GoogleDriveVideo';
 
 export const RelatabilitySection = () => {
   return (
@@ -14,8 +14,8 @@ export const RelatabilitySection = () => {
           </p>
           
           <div className="bg-card rounded-lg shadow-soft p-8 mb-8">
-            <YouTubeVideo 
-              videoId="PDEI9pxbT3Q" 
+            <GoogleDriveVideo 
+              fileId="1EChFBAbyhaxBQPpUAY36ovC_o-gzI_dY" 
               title="Customer Fuel Frustration Story"
             />
           </div>
