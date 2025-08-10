@@ -2,56 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Futurewave CNG Design System - Energy Savings & Trust Theme */
+/* Futurewave Energy Solutions Brand Design System */
+
+@import url('https://fonts.googleapis.com/css2?family=Avenir:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;500;600;700;800;900&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 215 28% 17%;
+    --background: 0 0% 99.4%; /* #FEFEFE */
+    --foreground: 0 0% 0%; /* #000000 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 28% 17%;
+    --card: 0 0% 99.4%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 17%;
+    --popover: 0 0% 99.4%;
+    --popover-foreground: 0 0% 0%;
 
-    /* Primary: Deep forest green - trust & savings */
-    --primary: 152 69% 19%;
-    --primary-foreground: 0 0% 98%;
-    --primary-hover: 152 69% 15%;
+    /* Primary: Bright Green #7ED958 */
+    --primary: 98 67% 59%;
+    --primary-foreground: 0 0% 0%;
+    --primary-hover: 98 48% 45%; /* Medium Green #5A993D */
     
-    /* Secondary: Vibrant green - action & energy */
-    --secondary: 142 76% 36%;
-    --secondary-foreground: 0 0% 98%;
-    --secondary-hover: 142 76% 32%;
+    /* Secondary: Dark Green #426F2E */
+    --secondary: 96 41% 31%;
+    --secondary-foreground: 0 0% 99.4%;
+    --secondary-hover: 96 41% 25%;
 
-    /* Accent: Warm orange - urgency & savings */
-    --accent: 25 95% 53%;
-    --accent-foreground: 0 0% 98%;
+    /* Accent: Medium Green #5A993D */
+    --accent: 98 48% 45%;
+    --accent-foreground: 0 0% 99.4%;
     
-    /* Success: Bright green for savings highlights */
-    --success: 120 100% 40%;
-    --success-foreground: 0 0% 98%;
+    /* Success: Bright Green */
+    --success: 98 67% 59%;
+    --success-foreground: 0 0% 0%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 240 5% 92%; /* Light Gray #EBECEC */
+    --muted-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 99.4%;
 
-    --border: 215 14% 89%;
-    --input: 215 14% 89%;
-    --ring: 152 69% 19%;
+    --border: 240 5% 92%;
+    --input: 240 5% 92%;
+    --ring: 98 67% 59%;
     
     /* Custom gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(152 69% 19%) 0%, hsl(142 76% 36%) 100%);
-    --gradient-savings: linear-gradient(90deg, hsl(120 100% 40%) 0%, hsl(142 76% 36%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(25 95% 47%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(98 67% 59%) 0%, hsl(96 41% 31%) 100%);
+    --gradient-savings: linear-gradient(90deg, hsl(98 67% 59%) 0%, hsl(98 48% 45%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(98 67% 59%) 0%, hsl(98 48% 45%) 100%);
     
     /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(152 69% 19% / 0.1);
-    --shadow-strong: 0 8px 30px hsl(152 69% 19% / 0.15);
-    --shadow-cta: 0 6px 25px hsl(25 95% 53% / 0.3);
+    --shadow-soft: 0 4px 20px hsl(96 41% 31% / 0.1);
+    --shadow-strong: 0 8px 30px hsl(96 41% 31% / 0.15);
+    --shadow-cta: 0 6px 25px hsl(98 67% 59% / 0.3);
 
     --radius: 0.5rem;
 
@@ -117,6 +120,23 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-avenir;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-helvetica font-bold text-secondary;
+  }
+
+  /* Section background utilities */
+  .section-green {
+    @apply bg-primary text-foreground;
+  }
+
+  .section-dark {
+    @apply bg-secondary text-secondary-foreground;
+  }
+
+  .section-light {
+    @apply bg-muted text-muted-foreground;
   }
 }

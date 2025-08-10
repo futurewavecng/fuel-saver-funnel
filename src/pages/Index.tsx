@@ -1,3 +1,4 @@
+import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { ProblemCallout } from "@/components/ProblemCallout";
 import { RelatabilitySection } from "@/components/RelatabilitySection";
@@ -10,6 +11,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Header />
       <Hero />
       <ProblemCallout />
       <RelatabilitySection />

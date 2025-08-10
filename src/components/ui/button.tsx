@@ -9,17 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary-hover shadow-soft transition-all duration-300",
+        default: "bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground rounded-lg transition-all duration-300",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-lg",
         outline:
-          "border border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground transition-all duration-300",
+          "border border-primary text-primary bg-transparent hover:bg-accent hover:text-accent-foreground rounded-lg transition-all duration-300",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary-hover shadow-soft transition-all duration-300",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
+          "bg-secondary text-secondary-foreground hover:bg-secondary-hover rounded-lg transition-all duration-300",
+        ghost: "hover:bg-accent hover:text-accent-foreground rounded-lg",
         link: "text-primary underline-offset-4 hover:underline",
-        cta: "bg-gradient-cta text-accent-foreground hover:scale-105 shadow-cta transition-all duration-300 font-semibold",
-        savings: "bg-gradient-savings text-success-foreground hover:scale-105 shadow-soft transition-all duration-300 font-semibold",
+        cta: "bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground rounded-lg transition-all duration-300 font-semibold",
+        savings: "bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground rounded-lg transition-all duration-300 font-semibold",
       },
       size: {
         default: "h-10 px-4 py-2",
