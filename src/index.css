@@ -127,6 +127,11 @@
     @apply font-helvetica font-bold text-secondary;
   }
 
+  /* Override for hero section - keep white text */
+  .hero-text h1 {
+    @apply text-white !important;
+  }
+
   /* Section background utilities */
   .section-green {
     @apply bg-primary text-foreground;

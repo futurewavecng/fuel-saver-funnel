@@ -103,7 +103,7 @@ export const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20 min-h-screen flex items-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           {/* Left Column - Hero Content */}
-          <div className="text-white space-y-6">
+          <div className="text-white space-y-6 hero-text">
             <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white">
               Fuel Is Draining Your{" "}
               <span className="text-accent">Wallet</span>.{" "}
