@@ -4,7 +4,7 @@ export const Logo = () => {
       <img 
         src="/lovable-uploads/c296d986-2601-4bdf-8918-49298e75c0e9.png" 
         alt="Futurewave Energy Solutions Logo" 
-        className="h-8 md:h-10 w-auto"
+        className="h-8 md:h-10 w-24 md:w-32"
       />
     </div>
   );
