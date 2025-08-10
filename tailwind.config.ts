@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'avenir': ['Avenir', 'system-ui', 'sans-serif'],
-				'helvetica': ['Helvetica', 'Arial', 'sans-serif'],
+				'avenir': ['Inter', 'system-ui', 'sans-serif'],
+				'helvetica': ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
