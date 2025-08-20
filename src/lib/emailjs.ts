@@ -8,7 +8,8 @@ export interface LeadFormData {
   name: string;
   email: string;
   phone: string;
-  vehicleType: string;
+  vehicleMakeModel: string;
+  vehicleYear: string;
   plugType: string;
   location: string;
 }
@@ -19,7 +20,8 @@ export const sendLeadEmail = async (formData: LeadFormData): Promise<boolean> =>
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
-      vehicle_type: formData.vehicleType,
+      vehicle_make_model: formData.vehicleMakeModel,
+      vehicle_year: formData.vehicleYear,
       engine_type: formData.plugType,
       location: formData.location,
       message: `New CNG Guide Download Request
@@ -27,7 +29,8 @@ export const sendLeadEmail = async (formData: LeadFormData): Promise<boolean> =>
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
-Vehicle Type: ${formData.vehicleType}
+Vehicle Make & Model: ${formData.vehicleMakeModel}
+Vehicle Year: ${formData.vehicleYear}
 Engine Type: ${formData.plugType}
 Location: ${formData.location}
 Submitted: ${new Date().toLocaleString()}`,

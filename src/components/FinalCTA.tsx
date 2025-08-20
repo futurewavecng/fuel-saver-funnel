@@ -11,7 +11,8 @@ export const FinalCTA = () => {
     name: "",
     email: "",
     phone: "",
-    vehicleType: "",
+    vehicleMakeModel: "",
+    vehicleYear: "",
     plugType: "",
     location: ""
   });
@@ -21,7 +22,7 @@ export const FinalCTA = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.phone || !formData.vehicleType || !formData.plugType || !formData.location) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.vehicleMakeModel || !formData.vehicleYear || !formData.plugType || !formData.location) {
       toast({
         title: "Missing Information",
         description: "Please fill in all fields to download the guide.",
@@ -46,7 +47,8 @@ export const FinalCTA = () => {
           name: "",
           email: "",
           phone: "",
-          vehicleType: "",
+          vehicleMakeModel: "",
+          vehicleYear: "",
           plugType: "",
           location: ""
         });
@@ -187,20 +189,24 @@ export const FinalCTA = () => {
                     required
                   />
                   
-                  <div className="grid md:grid-cols-3 gap-4">
-                    <Select value={formData.vehicleType} onValueChange={(value) => setFormData({...formData, vehicleType: value})}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Vehicle type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="sedan">Sedan</SelectItem>
-                        <SelectItem value="suv">SUV</SelectItem>
-                        <SelectItem value="hatchback">Hatchback</SelectItem>
-                        <SelectItem value="pickup">Pickup Truck</SelectItem>
-                        <SelectItem value="bus">Bus/Commercial</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
-                      </SelectContent>
-                    </Select>
+                  <div className="grid md:grid-cols-4 gap-4">
+                    <Input
+                      placeholder="Vehicle make & model (e.g., Toyota Camry)"
+                      value={formData.vehicleMakeModel}
+                      onChange={(e) => setFormData({...formData, vehicleMakeModel: e.target.value})}
+                      required
+                      className="md:col-span-2"
+                    />
+                    
+                    <Input
+                      placeholder="Vehicle year"
+                      type="number"
+                      min="1980"
+                      max="2025"
+                      value={formData.vehicleYear}
+                      onChange={(e) => setFormData({...formData, vehicleYear: e.target.value})}
+                      required
+                    />
                     
                     <Select value={formData.plugType} onValueChange={(value) => setFormData({...formData, plugType: value})}>
                       <SelectTrigger>
