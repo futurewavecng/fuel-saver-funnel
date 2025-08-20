@@ -15,7 +15,7 @@ export const SolutionSection = () => {
     },
     {
       step: "3",
-      title: "Financing Options",
+      title: "Financing Solution",
       description: "Flexible payment plans to make conversion affordable for everyone"
     },
     {

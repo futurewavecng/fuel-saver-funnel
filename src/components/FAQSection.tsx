@@ -77,13 +77,19 @@ export const FAQSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:+2348012345678" 
+                href="tel:+2349040409000" 
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary-hover transition-colors"
               >
-                📞 Call Us: +234 801 234 5678
+                📞 Call Us: +234 904 040 9000
               </a>
               <a 
-                href="https://wa.me/2348012345678" 
+                href="tel:+234904040800" 
+                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary-hover transition-colors"
+              >
+                📞 Alt: +234 904 040 800
+              </a>
+              <a 
+                href="https://wa.me/2349040409000" 
                 className="inline-flex items-center justify-center px-6 py-3 bg-success text-success-foreground rounded-lg font-semibold hover:scale-105 transition-transform"
               >
                 💬 WhatsApp Support

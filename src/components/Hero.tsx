@@ -112,9 +112,9 @@ export const Hero = () => {
               <span className="block mt-2">Here's The Smarter Alternative.</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-              Discover how over <span className="font-bold text-accent">200 Nigerians</span> are saving{" "}
-              <span className="font-bold text-success">50%+</span> on fuel with Futurewave CNG.
+            <p className="text-xl md:text-2xl text-white leading-relaxed font-semibold drop-shadow-lg">
+              Discover how over <span className="font-bold text-white">200 Nigerians</span> are saving{" "}
+              <span className="font-bold text-white">50%+</span> on fuel with Futurewave CNG.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -143,14 +143,14 @@ export const Hero = () => {
                 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <Input
-                    placeholder="Your full name"
+                    placeholder="Full Name"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
                     required
                   />
                   
                   <Input
-                    placeholder="Your email address"
+                    placeholder="Email Address"
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -158,7 +158,7 @@ export const Hero = () => {
                   />
                   
                   <Input
-                    placeholder="Your phone number"
+                    placeholder="Phone Number"
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}

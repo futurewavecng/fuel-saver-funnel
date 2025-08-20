@@ -166,14 +166,14 @@ export const FinalCTA = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid md:grid-cols-2 gap-4">
                     <Input
-                      placeholder="Your full name"
+                      placeholder="Full Name"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       required
                     />
                     
                     <Input
-                      placeholder="Your email address"
+                      placeholder="Email Address"
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -182,7 +182,7 @@ export const FinalCTA = () => {
                   </div>
                   
                   <Input
-                    placeholder="Your phone number"
+                    placeholder="Phone Number"
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
