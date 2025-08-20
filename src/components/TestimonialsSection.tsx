@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { GoogleDriveVideo } from './GoogleDriveVideo';
+import { YouTubeVideo } from './YouTubeVideo';
 
 export const TestimonialsSection = () => {
   const testimonials = [
@@ -66,8 +66,8 @@ export const TestimonialsSection = () => {
           </p>
           
           <div className="mt-8 bg-card rounded-lg shadow-soft p-8 max-w-2xl mx-auto">
-            <GoogleDriveVideo 
-              fileId="1HPqH51ktO6bVHL07q6TXnVBslrYwxswB" 
+            <YouTubeVideo 
+              videoId="5bFiUNamD5U" 
               title="Real Customer Stories - CNG Conversion Success"
             />
           </div>
