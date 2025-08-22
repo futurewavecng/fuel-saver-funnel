@@ -1,9 +1,3 @@
-import emailjs from '@emailjs/browser';
-
-const SERVICE_ID = 'service_7t2iv9w';
-const TEMPLATE_ID = 'template_070sjjn';
-const PUBLIC_KEY = 'Ar15Ul4LHp78NCYim';
-
 export interface LeadFormData {
   name: string;
   email: string;
@@ -14,36 +8,27 @@ export interface LeadFormData {
   location: string;
 }
 
+// Replace this with your Google Apps Script web app URL
+const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+
 export const sendLeadEmail = async (formData: LeadFormData): Promise<boolean> => {
   try {
-    const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      vehicle_make_model: formData.vehicleMakeModel,
-      vehicle_year: formData.vehicleYear,
-      engine_type: formData.plugType,
-      location: formData.location,
-      message: `New CNG Guide Download Request
-      
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Vehicle Make & Model: ${formData.vehicleMakeModel}
-Vehicle Year: ${formData.vehicleYear}
-Engine Type: ${formData.plugType}
-Location: ${formData.location}
-Submitted: ${new Date().toLocaleString()}
-
-Please send them the Complete CNG Conversion Guide PDF:
-https://drive.google.com/file/d/1GRZQiAZo4TfJz6U7L9nukTO4lFU7iIQC/view?usp=drivesdk`,
-    };
-
-    console.log('Sending email with data:', templateParams);
-    await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
-    return true;
+    console.log('Sending data to Google Sheets:', formData);
+    
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+    
+    const result = await response.json();
+    console.log('Google Sheets response:', result);
+    
+    return result.success === true;
   } catch (error) {
-    console.error('EmailJS Error:', error);
+    console.error('Google Sheets Error:', error);
     return false;
   }
 };
