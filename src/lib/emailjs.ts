@@ -8,14 +8,14 @@ export interface LeadFormData {
   location: string;
 }
 
-// Replace this with your Google Apps Script web app URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwpUGnVqjSfLf_IePQyCijLAweswT-6QKkZXZwpQhU0AsvG_UPTS6LKriiYk24T-2g/exec';
+// Formspree endpoint URL
+const FORMSPREE_URL = 'https://formspree.io/f/mdkdqgow';
 
 export const sendLeadEmail = async (formData: LeadFormData): Promise<boolean> => {
   try {
-    console.log('Sending data to Google Sheets:', formData);
+    console.log('Sending data to Formspree:', formData);
     
-    const response = await fetch(GOOGLE_SCRIPT_URL, {
+    const response = await fetch(FORMSPREE_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -24,7 +24,6 @@ export const sendLeadEmail = async (formData: LeadFormData): Promise<boolean> =>
     });
     
     console.log('Response status:', response.status);
-    console.log('Response headers:', response.headers);
     
     if (!response.ok) {
       console.error('Response not OK:', response.status, response.statusText);
@@ -33,10 +32,8 @@ export const sendLeadEmail = async (formData: LeadFormData): Promise<boolean> =>
       return false;
     }
     
-    const result = await response.json();
-    console.log('Google Sheets response:', result);
-    
-    return result.success === true;
+    console.log('Formspree submission successful');
+    return true;
   } catch (error) {
     console.error('Google Sheets Error:', error);
     console.error('Error details:', error.message);
