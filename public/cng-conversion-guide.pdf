@@ -1,0 +1,9 @@
+# Placeholder for CNG Conversion Guide PDF
+
+This is a placeholder file. To add your actual PDF:
+
+1. Click "Dev Mode" in the top left
+2. Navigate to the public folder
+3. Delete this file and upload your PDF with the name "cng-conversion-guide.pdf"
+
+The download functionality is already set up to use this file path.

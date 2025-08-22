@@ -55,7 +55,7 @@ export const FinalCTA = () => {
         
         // Trigger download
         const link = document.createElement('a');
-        link.href = "https://drive.google.com/uc?export=download&id=1r1VAzbanwY-MS3Y6iAdj8_w9X8keHxeh";
+        link.href = "/cng-conversion-guide.pdf";
         link.download = "CNG_Conversion_Guide.pdf";
         document.body.appendChild(link);
         link.click();
