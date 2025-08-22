@@ -16,7 +16,7 @@ export const ProblemCallout = () => {
           <div className="mt-8 grid md:grid-cols-3 gap-6 text-center">
             <div className="bg-destructive-foreground/10 rounded-lg p-6">
               <div className="text-2xl font-bold text-accent mb-2">₦900+</div>
-              <div className="text-destructive-foreground/80">Per Liter</div>
+              <div className="text-destructive-foreground/80">Per Litre</div>
             </div>
             <div className="bg-destructive-foreground/10 rounded-lg p-6">
               <div className="text-2xl font-bold text-accent mb-2">₦60,000+</div>

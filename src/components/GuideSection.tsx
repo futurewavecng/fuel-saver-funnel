@@ -28,9 +28,6 @@ export const GuideSection = () => {
                     <div className="mt-4 h-32 bg-gradient-hero rounded-lg flex items-center justify-center">
                       <span className="text-6xl">📚</span>
                     </div>
-                    <div className="mt-4 text-xs text-muted-foreground">
-                      32 Pages • PDF Download • Instant Access
-                    </div>
                   </div>
                 </div>
                 <p className="text-white/80 text-center">

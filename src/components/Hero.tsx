@@ -197,7 +197,7 @@ export const Hero = () => {
                   
                   <Select value={formData.location} onValueChange={(value) => setFormData({...formData, location: value})}>
                     <SelectTrigger>
-                      <SelectValue placeholder="Your location" />
+                      <SelectValue placeholder="Location" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="lagos">Lagos</SelectItem>
