@@ -9,7 +9,7 @@ export interface LeadFormData {
 }
 
 // Replace this with your Google Apps Script web app URL
-const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyV4IlaTrLENIIxD6Pq_jk_DM8zYWxcXI1RUDatrjYcTPFwx_40jNsz4RlYuVDf2RFN7w/exec';
 
 export const sendLeadEmail = async (formData: LeadFormData): Promise<boolean> => {
   try {
