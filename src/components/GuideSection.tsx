@@ -38,9 +38,9 @@ export const GuideSection = () => {
 
             {/* Right - Benefits & CTA */}
             <div className="text-white">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
                 What You Get With The 
-                <span className="text-accent block">Free Guide</span>
+                <span className="text-white block">Free Guide</span>
               </h2>
               
               <p className="text-xl text-white/90 mb-8">
