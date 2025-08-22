@@ -33,7 +33,10 @@ Vehicle Make & Model: ${formData.vehicleMakeModel}
 Vehicle Year: ${formData.vehicleYear}
 Engine Type: ${formData.plugType}
 Location: ${formData.location}
-Submitted: ${new Date().toLocaleString()}`,
+Submitted: ${new Date().toLocaleString()}
+
+Please send them the Complete CNG Conversion Guide PDF:
+https://drive.google.com/file/d/1GRZQiAZo4TfJz6U7L9nukTO4lFU7iIQC/view?usp=drivesdk`,
     };
 
     console.log('Sending email with data:', templateParams);
