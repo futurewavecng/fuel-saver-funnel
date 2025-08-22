@@ -23,12 +23,23 @@ export const sendLeadEmail = async (formData: LeadFormData): Promise<boolean> =>
       body: JSON.stringify(formData),
     });
     
+    console.log('Response status:', response.status);
+    console.log('Response headers:', response.headers);
+    
+    if (!response.ok) {
+      console.error('Response not OK:', response.status, response.statusText);
+      const errorText = await response.text();
+      console.error('Error response body:', errorText);
+      return false;
+    }
+    
     const result = await response.json();
     console.log('Google Sheets response:', result);
     
     return result.success === true;
   } catch (error) {
     console.error('Google Sheets Error:', error);
+    console.error('Error details:', error.message);
     return false;
   }
 };
